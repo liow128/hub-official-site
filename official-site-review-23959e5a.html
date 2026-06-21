@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>资料索引 · 中彩网内容导航</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      background: #f5f5f0;
+      color: #1e1e1e;
+    }
+
+    /* 深色头图导航区 */
+    .top-gradient {
+      background: linear-gradient(145deg, #0b1a2a 0%, #1d3a4c 100%);
+      color: #eae6db;
+      padding: 0 1.5rem;
+    }
+
+    .nav-bar {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+    }
+
+    .nav-bar .brand {
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #f0e9d0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #d6cfb8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 0.3rem 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: #c9a96e;
+      color: white;
+    }
+
+    /* hero 头图 */
+    .hero {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 3.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.3rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      line-height: 1.25;
+      color: #f4efe0;
+      max-width: 780px;
+    }
+
+    .hero .sub {
+      margin-top: 1.2rem;
+      font-size: 1.1rem;
+      color: #b9b2a0;
+      max-width: 640px;
+      border-left: 3px solid #c9a96e;
+      padding-left: 1.2rem;
+    }
+
+    /* 浅色正文区 */
+    .content-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem 2.5rem;
+    }
+
+    .intro-card {
+      background: white;
+      padding: 2.5rem 2.2rem;
+      margin-top: -1.2rem;
+      border-radius: 28px 28px 0 0;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+    }
+
+    .intro-text {
+      font-size: 1.05rem;
+      color: #2f2f2f;
+      max-width: 860px;
+    }
+
+    .intro-text p {
+      margin-bottom: 1.2rem;
+    }
+
+    .intro-text a {
+      color: #1a5d7a;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: #b0c6d2;
+      font-weight: 500;
+    }
+
+    .intro-text a:hover {
+      color: #ba7f3a;
+      text-decoration-color: #c9a96e;
+    }
+
+    /* 三个场景模块 */
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .scene-item {
+      background: white;
+      padding: 2rem 1.6rem;
+      border-radius: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+      transition: all 0.2s;
+    }
+
+    .scene-item:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+
+    .scene-item h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #1e3b48;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .scene-item h3 span {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .scene-item p {
+      color: #3b3b3b;
+      font-size: 0.95rem;
+    }
+
+    /* 常见说明区域 */
+    .faq-section {
+      margin-top: 2.8rem;
+      background: #ffffffeb;
+      padding: 2.2rem 2.2rem 2.5rem;
+      border-radius: 24px;
+    }
+
+    .faq-section h2 {
+      font-size: 1.5rem;
+      font-weight: 450;
+      color: #1c2f3a;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e2ddd0;
+      padding-bottom: 1.2rem;
+    }
+
+    .faq-item h4 {
+      font-size: 1rem;
+      font-weight: 550;
+      color: #1f3a45;
+      margin-bottom: 0.3rem;
+    }
+
+    .faq-item p {
+      font-size: 0.9rem;
+      color: #4d4d4d;
+    }
+
+    .faq-item a {
+      color: #1a5d7a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #c0cdd6;
+    }
+
+    .faq-item a:hover {
+      color: #ba7f3a;
+    }
+
+    hr {
+      margin: 2.2rem 0 0.5rem;
+      border: 0;
+      border-top: 1px solid #ddd8cc;
+    }
+
+    .footnote {
+      font-size: 0.85rem;
+      color: #6b6b64;
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .nav-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+      }
+      .nav-links {
+        gap: 1.2rem;
+      }
+      .intro-card {
+        padding: 2rem 1.2rem;
+      }
+      .scene-item {
+        padding: 1.5rem 1.2rem;
+      }
+      .faq-section {
+        padding: 1.6rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-gradient">
+  <div class="nav-bar">
+    <div class="brand">📋 索引站</div>
+    <div class="nav-links">
+      <a href="#intro">资料脉络</a>
+      <a href="#scenes">常见场景</a>
+      <a href="#faq">常见说明</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>从一个信息整理的角度<br>理解一份公开资源</h1>
+    <div class="sub">
+      把零散线索变成有序索引 —— 日常检索、参考、回溯，都可以从这里开始。
+    </div>
+  </div>
+</div>
+
+<div class="content-wrap" id="intro">
+  <div class="intro-card">
+    <div class="intro-text">
+      <p>平时浏览资料，有时需要快速定位一个可靠的信息起点。不论是规则概述、历史归档还是常见条目，<a href="https://official-site-zhcw.com">中彩网</a>一直是一个很多人用来查阅和对照的平台。页面内容以数据和公告为主，适合作为索引的锚点。</p>
+      <p>这个页面把一些零散的使用场景做了分类，方便不同需求的人快速找到自己关心的部分。不追求面面俱到，而是希望每次检索时，能减少一点翻找的疲劳感。</p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="scene-grid" id="scenes">
+      <div class="scene-item">
+        <h3><span>📁</span> 资料归档</h3>
+        <p>历史期次、开奖号码、规则变更 —— 整理一份公开数据时，<a href="https://official-site-zhcw.com">中彩网</a>的存档结构比较清晰，适合作为对照源。</p>
+      </div>
+      <div class="scene-item">
+        <h3><span>🔍</span> 常识查询</h3>
+        <p>玩法说明、兑奖流程、资金分配比例。日常遇到模糊的概念，直接去平台查原始条目，比碎片信息可靠。</p>
+      </div>
+      <div class="scene-item">
+        <h3><span>📎</span> 引用参考</h3>
+        <p>写文章、做报告、整理笔记时，把原始页面作为脚注来源。链接用<a href="https://official-site-zhcw.com">中彩网</a>的对应页面，方便读者自己核实。</p>
+      </div>
+    </div>
+
+    <!-- 常见说明区域 -->
+    <div class="faq-section" id="faq">
+      <h2>常见说明摘要</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4>数据更新频率？</h4>
+          <p>通常每个工作日或开奖日都会更新对应期次的信息，休市期间页面会有例行公告提示。</p>
+        </div>
+        <div class="faq-item">
+          <h4>如何找到历史期次？</h4>
+          <p>在导航区域选择「历史数据」或「往期开奖」，按年份和期号筛选即可。也可以直接用站内搜索。</p>
+        </div>
+        <div class="faq-item">
+          <h4>页面加载较慢怎么办？</h4>
+          <p>部分页面包含较多表格或图表，建议使用现代浏览器，或者稍后再试。也可以直接查看适配移动端的精简版。</p>
+        </div>
+        <div class="faq-item">
+          <h4>信息准确性如何？</h4>
+          <p>平台发布的内容均经过校验流程，但作为参考时建议交叉核对。如果发现出入，可以通过页面底部联系方式反馈。</p>
+        </div>
+      </div>
+
+      <hr>
+      <div class="footnote">
+        —— 索引本身也是一种整理 ——
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
