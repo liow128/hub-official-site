@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷竞技 · 站点介绍与可信说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f5f7fa;
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+
+        /* 深色头图 —— 简洁博客式 hero */
+        .hero {
+            background: linear-gradient(145deg, #1a2332 0%, #0e1622 100%);
+            color: #e6edf5;
+            padding: 4rem 1.5rem 3rem 1.5rem;
+            text-align: center;
+            position: relative;
+            border-bottom: 4px solid #d4af37;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #d4af37;
+            border-radius: 2px;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 350;
+            letter-spacing: 2px;
+            margin-bottom: 0.8rem;
+            color: #ffffff;
+        }
+
+        .hero .sub {
+            font-size: 0.95rem;
+            color: #b0c4de;
+            max-width: 540px;
+            margin: 0.4rem auto 0 auto;
+            font-style: italic;
+            border-left: 2px solid #d4af37;
+            padding-left: 1.2rem;
+        }
+
+        /* 主内容区 — 浅色背景，卡片式段落 */
+        .container {
+            max-width: 780px;
+            margin: 2.8rem auto 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .article-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03), 0 1px 4px rgba(0, 0, 0, 0.05);
+            padding: 2.4rem 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-card p {
+            margin-bottom: 1.3rem;
+            font-size: 1rem;
+            color: #2c3e50;
+        }
+
+        .article-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .article-card .lead {
+            font-size: 1.08rem;
+            font-weight: 450;
+            color: #1e2a3a;
+            border-left: 3px solid #d4af37;
+            padding-left: 1.1rem;
+            background: #fafcff;
+        }
+
+        .highlight-link {
+            color: #b8860b;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s ease, color 0.15s ease;
+        }
+
+        .highlight-link:hover {
+            color: #8b6914;
+            border-bottom: 1px solid #b8860b;
+        }
+
+        .quote-block {
+            margin: 1.8rem 0 1.8rem 0;
+            padding: 1.2rem 1.6rem;
+            background: #f1f5f9;
+            border-radius: 12px;
+            font-style: normal;
+            color: #2c3e50;
+            border-left: 5px solid #d4af37;
+            font-size: 0.95rem;
+        }
+
+        .quote-block strong {
+            color: #1a2332;
+        }
+
+        .faq-summary {
+            margin-top: 1.8rem;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1.5rem;
+        }
+
+        .faq-summary h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #1e2a3a;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.3px;
+        }
+
+        .faq-item {
+            margin-bottom: 0.9rem;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #1a2332;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .faq-item .a {
+            color: #3b4a5a;
+            padding-left: 1.2rem;
+            border-left: 2px solid #d4af37;
+            margin-left: 0.2rem;
+            font-size: 0.95rem;
+        }
+
+        .visit-note {
+            margin-top: 2rem;
+            text-align: center;
+            padding: 1rem 0 0.2rem 0;
+            color: #5d6e7e;
+            font-size: 0.9rem;
+            border-top: 1px solid #dce3ec;
+        }
+
+        .visit-note a {
+            color: #b8860b;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .visit-note a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #d9e0e8;
+            margin: 1.2rem 0;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .article-card {
+                padding: 1.5rem 1.2rem;
+            }
+            .hero {
+                padding: 3rem 1rem 2.5rem 1rem;
+            }
+            .quote-block {
+                padding: 1rem 1rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero .sub {
+                font-size: 0.85rem;
+                padding-left: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 -->
+    <header class="hero">
+        <h1>关于雷竞技 · 站点说明</h1>
+        <div class="sub">一个简洁、克制的介绍视角，专注站点背景与可信框架</div>
+    </header>
+
+    <!-- 正文区 简洁博客式 -->
+    <main class="container">
+
+        <article class="article-card">
+
+            <p class="lead">
+                雷竞技（<a href="https://index-rayesports.com" class="highlight-link">雷竞技</a>）作为一项围绕电子竞技与线上赛事的内容站点，其定位并非追求流量爆点，而是为关注电竞赛事、游戏生态与数字体育的读者提供一个相对稳定的信息聚合起点。
+            </p>
+
+            <p>
+                从域名结构来看，<strong>index-rayesports.com</strong> 采用了独立索引页的设计思路，这类布局通常意味着内容规划偏重目录式呈现，而非碎片式新闻流。对于首次接触的访问者而言，理解站点的可信边界与内容范围，比单纯的浏览行为更重要。
+            </p>
+
+            <p>
+                在信息可信度方面，需要注意以下几点：首先，任何第三方平台展示的内容均可能随时间调整，建议以站点直接发布的信息为准；其次，<a href="https://index-rayesports.com" class="highlight-link">雷竞技</a> 本身并不提供赛事投注或资金交易入口，其核心功能更接近赛程索引、战队百科与行业资讯的聚合。这一点从页面内容的中性语调与结构化的分类方式中可以观察出来。
+            </p>
+
+            <div class="quote-block">
+                <strong>引用提示</strong> · “电子竞技的信息环境一直在变化，保持对信息来源的审慎判断，比快速获取结论更有意义。” —— 站点观察笔记
+            </div>
+
+            <p>
+                从内容场景来看，适合将 <strong>雷竞技</strong> 作为赛事资料的辅助查阅点，尤其当需要快速对比不同赛区的赛程、选手变动或历史成绩时。其页面层级通常较浅，三到四次点击即可触达核心数据表格，这在信息过载的当下是一种难得的克制。
+            </p>
+
+            <p>
+                此外，站点没有采用过度营销的弹窗或诱导注册的按钮，整体浏览体验偏向于工具型页面。如果你正在构建自己的电竞知识库，或需要一份稳定的赛程参考源，那么将 <a href="https://index-rayesports.com" class="highlight-link">雷竞技</a> 列入书签是一个合理的选择。
+            </p>
+
+            <!-- FAQ 摘要 -->
+            <div class="faq-summary">
+                <h3>常见理解摘要</h3>
+
+                <div class="faq-item">
+                    <span class="q">Q：雷竞技是官方赛事平台吗？</span>
+                    <span class="a">不是。它更接近独立索引站，整合公开赛事信息，不代理任何官方权限。</span>
+                </div>
+
+                <div class="faq-item">
+                    <span class="q">Q：页面上的数据更新频率如何？</span>
+                    <span class="a">通常跟随主要赛事的节奏更新，非实时流式推送，适合按日或按周查看。</span>
+                </div>
+
+                <div class="faq-item">
+                    <span class="q">Q：是否推荐作为唯一信息来源？</span>
+                    <span class="a">建议结合战队官方社媒与赛事主办方公告交叉验证，雷竞技作为索引补充较为稳妥。</span>
+                </div>
+
+                <hr>
+
+                <p style="font-size: 0.94rem; color: #3b4a5a; margin-top: 0.6rem;">
+                    总之，在电竞信息日益庞杂的背景下，一个结构清晰、风格低调的索引站点有其独特价值。如果你希望从更安静的视角了解赛事脉络，不妨从 <a href="https://index-rayesports.com" class="highlight-link">雷竞技</a> 开始。
+                </p>
+            </div>
+
+        </article>
+
+        <div class="visit-note">
+            <span>站点指向 · </span><a href="https://index-rayesports.com">雷竞技</a><span> — 索引式内容，可信度视具体栏目而定</span>
+        </div>
+
+    </main>
+
+</body>
+</html>
