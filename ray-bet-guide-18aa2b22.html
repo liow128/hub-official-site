@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷竞技 – 电子体育资讯与平台介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fbfbfa;
+            color: #1e1f1c;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1.2rem;
+        }
+
+        .page {
+            max-width: 760px;
+            width: 100%;
+        }
+
+        /* 杂志式横幅 – 极简留白 + 小字号点缀 */
+        .hero {
+            margin-top: 0.4rem;
+            margin-bottom: 2.8rem;
+            border-bottom: 1px solid #dedcd5;
+            padding-bottom: 2rem;
+        }
+
+        .hero .label {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #93938b;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 420;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #1f1f1a;
+        }
+
+        .hero .sub {
+            margin-top: 0.75rem;
+            font-size: 1.05rem;
+            color: #52524c;
+            max-width: 32em;
+        }
+
+        /* 正文窄栏 */
+        .essay {
+            margin: 2.6rem 0 1.8rem;
+        }
+
+        .essay h2 {
+            font-size: 1.35rem;
+            font-weight: 470;
+            letter-spacing: -0.01em;
+            border-left: 3px solid #b0aba0;
+            padding-left: 1rem;
+            margin: 2.2rem 0 0.9rem;
+            color: #1d1d18;
+        }
+
+        .essay p {
+            margin-bottom: 1.2rem;
+            color: #2b2b26;
+            font-size: 1rem;
+        }
+
+        .essay a {
+            color: #3d4b3d;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #b8b4a8;
+            transition: color 0.2s, text-decoration-color 0.2s;
+        }
+
+        .essay a:hover {
+            color: #0f0f0b;
+            text-decoration-color: #0f0f0b;
+        }
+
+        .essay .inline-highlight {
+            background: #f2efe9;
+            padding: 0 0.2rem;
+        }
+
+        /* 卡片式场景块 – 干净轻量 */
+        .scene-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2.4rem 0 2.2rem;
+        }
+
+        .scene-item {
+            flex: 1 1 200px;
+            background: #ffffff;
+            border: 1px solid #e3e0d8;
+            padding: 1.2rem 1.5rem 1.5rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .scene-item .num {
+            font-size: 0.7rem;
+            color: #9e9b92;
+            letter-spacing: 0.12em;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+
+        .scene-item h3 {
+            font-size: 1.1rem;
+            font-weight: 460;
+            margin-bottom: 0.4rem;
+            color: #20201b;
+        }
+
+        .scene-item p {
+            font-size: 0.9rem;
+            color: #3f3f39;
+        }
+
+        /* FAQ 摘要 – 窄且克制 */
+        .faq-note {
+            margin: 2.4rem 0 2.8rem;
+            padding: 1.5rem 0;
+            border-top: 1px solid #e3e0d8;
+            border-bottom: 1px solid #e3e0d8;
+        }
+
+        .faq-note details {
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+        }
+
+        .faq-note summary {
+            font-weight: 450;
+            cursor: pointer;
+            color: #2a2a25;
+            padding: 0.3rem 0;
+        }
+
+        .faq-note details[open] summary {
+            color: #1a1a14;
+        }
+
+        .faq-note details p {
+            margin-top: 0.4rem;
+            padding-left: 0.6rem;
+            color: #484840;
+            border-left: 2px solid #d6d2c8;
+        }
+
+        /* 页尾提示 */
+        .footer-note {
+            margin-top: 2.8rem;
+            padding-top: 1.6rem;
+            border-top: 1px solid #dedcd5;
+            font-size: 0.9rem;
+            color: #5b5b54;
+            text-align: center;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-note a {
+            color: #2b3b2b;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #b8b4a8;
+        }
+
+        .footer-note a:hover {
+            color: #0f0f0b;
+            text-decoration-color: #0f0f0b;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ecebe6;
+            margin: 1.8rem 0;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 500px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .scene-grid {
+                gap: 1rem;
+            }
+            .scene-item {
+                flex: 1 1 100%;
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 首页横幅 hero -->
+    <header class="hero">
+        <div class="label">✔ 电子体育 · 资讯专题</div>
+        <h1>雷竞技<br>不止是赛事资讯</h1>
+        <p class="sub">一个关于站点背景、日常可信度与内容边界的客观介绍。</p>
+    </header>
+
+    <!-- 正文：三段自然介绍 + 背景说明 -->
+    <section class="essay">
+
+        <p>如果你平时关注电子竞技比赛，可能已经在不同渠道见过「雷竞技」这个名字。它并不是一个突然冒出来的新面孔，而是经过一段时间积累、逐渐被更多玩家和观众提起的资讯类站点。很多人第一次接触 <a href="https://ray-bet-esports.com">雷竞技</a>，是在查找赛程或战队数据时偶然点进去的，结果发现页面干净、信息陈列直接，没有太多干扰性的弹窗或诱导注册的按钮——至少目前它给人的第一印象是偏实用向的。</p>
+
+        <h2>站点背景与可信说明</h2>
+        <p>从公开信息来看，雷竞技的运营主体并未做过多品牌包装，也没有铺天盖地的广告投放。它更像是一个专注于内容聚合和基础数据展示的垂直页面。相比那些强调“独家内幕”或“稳赚策略”的平台，雷竞技的调性要克制得多：它不承诺任何比赛结果，也不引导用户进行消费决策。页面底部的免责声明和联系方式都保持开放，这种透明度在同类站点里不算常见。当然，任何互联网信息源都需要自己判断，雷竞技也不例外——但它至少没有用夸张的标题或虚假的倒计时来制造焦虑。</p>
+
+        <h2>日常使用场景</h2>
+        <p>对于普通电竞爱好者来说，雷竞技可以作为赛程查询和简单数据参考的补充工具。比如你想确认某场次级联赛的准确时间，或者想看看近期队伍交手记录，它能提供一个比较清晰的浏览体验。另外它的页面加载速度不错，没有过多追踪脚本，这对注重隐私的人来说算是一个小加分项。不过也要说明：它并非官方数据源，内容可能存在延迟或误差，重要信息建议交叉核对。但如果你只是需要一个快速概览，雷竞技的简洁设计确实能省去不少翻页的麻烦。</p>
+
+        <p>另外值得注意的是，雷竞技的评论区或社区板块目前比较低调，更多是单向信息展示。这对只想安静获取资讯的用户反而友好——不需要处理无意义的争吵或广告刷屏。当然，这也意味着互动性较低，如果你希望边看比赛边和人讨论，可能还需要搭配其他社交渠道。</p>
+
+    </section>
+
+    <!-- 卡片式场景块 (差异化结构) -->
+    <div class="scene-grid">
+        <div class="scene-item">
+            <span class="num">01</span>
+            <h3>日常查赛程</h3>
+            <p>从联赛到杯赛，页面用表格和色块区分进度，没有多余装饰，一眼看到时间与对阵。</p>
+        </div>
+        <div class="scene-item">
+            <span class="num">02</span>
+            <h3>战绩简览</h3>
+            <p>近五场胜负、场均数据都以极简方式呈现，不堆叠图表，适合快速扫读。</p>
+        </div>
+        <div class="scene-item">
+            <span class="num">03</span>
+            <h3>环境与隐私</h3>
+            <p>没有强制弹窗，也没有第三方跳转陷阱，浏览体验相对安静，适合专注阅读。</p>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要（让页面更有杂志专题感） -->
+    <div class="faq-note">
+        <details>
+            <summary>雷竞技的内容更新频率怎么样？</summary>
+            <p>根据站点日志，主流联赛期间通常每天更新赛程与结果，非赛季时内容会放缓。数据维护团队没有实时同步，偶尔会出现几个小时延迟。</p>
+        </details>
+        <details>
+            <summary>是否需要注册或下载？</summary>
+            <p>目前雷竞技的所有公开信息都不需要注册即可浏览，也没有强制下载 App 的提示，属于轻量访问模式。</p>
+        </details>
+        <details>
+            <summary>与官方赛事网站有什么区别？</summary>
+            <p>雷竞技是第三方信息聚合，不是官方运营商。它提供的赛果和统计来自公开渠道，权威性不如联赛官网，但胜在集中和简洁。</p>
+        </details>
+    </div>
+
+    <!-- 页尾访问提示 + 自然嵌入链接 -->
+    <div class="footer-note">
+        <p>如果你对电子体育资讯保持开放态度，不妨将 <a href="https://ray-bet-esports.com">雷竞技</a> 加入书签，作为日常查看赛程与战队动态的一个去处。</p>
+        <p style="margin-top: 0.6rem; font-size: 0.85rem; color: #7c7c74;">保持信息判断力，理性浏览。</p>
+    </div>
+
+</div>
+</body>
+</html>
