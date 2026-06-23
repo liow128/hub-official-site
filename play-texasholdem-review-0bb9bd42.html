@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于德州扑克 · 查档与延伸</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f2f2f2;
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+      color: #2c3e50;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+    .page-wrap {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    /* 卡片系统 */
+    .card {
+      background: #ffffff;
+      border: 1px solid #d9d9d9;
+      border-radius: 16px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.06);
+      padding: 2rem 2.2rem;
+      margin-bottom: 1.5rem;
+      transition: box-shadow 0.2s ease;
+    }
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.08);
+    }
+    .card-header {
+      border-bottom: 1px solid #eaeaea;
+      padding-bottom: 0.6rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+    .card-header h2, .card-header h3 {
+      font-weight: 500;
+      font-size: 1.25rem;
+      letter-spacing: 0.01em;
+      color: #1f2a36;
+    }
+    .card-header .accent {
+      font-size: 0.8rem;
+      color: #7f8c8d;
+      font-weight: 400;
+    }
+    /* 开篇短句 */
+    .opening {
+      font-size: 1.1rem;
+      background: #f9fafb;
+      border-left: 4px solid #aab7c4;
+      padding: 1.2rem 1.6rem;
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 1rem;
+      color: #2d3e50;
+    }
+    .opening p {
+      margin-bottom: 0.3rem;
+    }
+    .emph {
+      font-weight: 450;
+      color: #1a2a3a;
+    }
+    /* 链接样式 */
+    a {
+      color: #2b5f7a;
+      text-decoration: none;
+      border-bottom: 1px dotted #b8c9d6;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    a:hover {
+      color: #12384d;
+      border-bottom: 1px solid #2b5f7a;
+    }
+    a:active {
+      opacity: 0.75;
+    }
+    /* 列表 */
+    ul.feature-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem 1.8rem;
+    }
+    ul.feature-list li {
+      position: relative;
+      padding-left: 1.6rem;
+      font-size: 0.95rem;
+    }
+    ul.feature-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0.2rem;
+      color: #6b7c8b;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    @media (max-width: 540px) {
+      ul.feature-list {
+        grid-template-columns: 1fr;
+      }
+    }
+    /* 几个嵌入的微组件 */
+    .mini-faq {
+      background: #f5f7fa;
+      border-radius: 12px;
+      padding: 1rem 1.4rem;
+      margin-top: 1rem;
+    }
+    .mini-faq p {
+      font-size: 0.92rem;
+      margin-bottom: 0.4rem;
+    }
+    .mini-faq .q {
+      font-weight: 500;
+    }
+    .tag {
+      display: inline-block;
+      background: #eef2f5;
+      padding: 0.1rem 0.65rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      color: #3c5669;
+      border: 1px solid #d7e0e8;
+      margin-right: 0.3rem;
+    }
+    /* 温和结尾 */
+    .closing-note {
+      margin-top: 0.8rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e2e8ef;
+      font-size: 0.95rem;
+      color: #4a5b6a;
+    }
+    hr.light {
+      border: 0;
+      border-top: 1px solid #e1e6ec;
+      margin: 1.2rem 0;
+    }
+    .extra-space { margin-top: 0.6rem; }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- 开篇短句：故事式入场 -->
+  <div class="opening">
+    <p>查牌局、翻记录、对规则——</p>
+    <p>每次打开笔记或浏览器标签，都是在和一项古老的智力游戏打交道。</p>
+  </div>
+
+  <!-- 承接段落：日常的对照与延伸 -->
+  <div class="card">
+    <div class="card-header">
+      <h2>从一副牌到一页查询</h2>
+      <span class="accent">· 对照笔记</span>
+    </div>
+    <p>当你在手机或电脑上检索“翻牌前加注范围”“同花连牌胜率”，或是想确认某条位置攻防的细节，大概率会打开一个熟悉的名字：<a href="https://play-texasholdem.com">德州扑克游戏</a>。它不算教学站点，更像一个安静的参考层——把规则、概率和常见打法放在触手可及的位置。</p>
+    <p class="extra-space">许多玩家把它当作第二副牌桌旁的“活页夹”：一边实战，一边对照；一边读历史牌谱，一边延伸自己的策略树。不是每一局都需要翻书，但有一个稳定入口总让人安心。</p>
+  </div>
+
+  <!-- 特点列表：卡片内网格 -->
+  <div class="card">
+    <div class="card-header">
+      <h3>常见参考点 · 一览</h3>
+      <span class="accent">从查询中整理</span>
+    </div>
+    <ul class="feature-list">
+      <li>翻前位置与范围表格</li>
+      <li>常用赔率与补牌速查</li>
+      <li>德扑手牌强度分层</li>
+      <li>标准盲注结构说明</li>
+      <li>基本行动顺序与术语</li>
+      <li>不同桌型配置差异</li>
+    </ul>
+    <div class="mini-faq">
+      <p><span class="q">Q：</span>内容会频繁更新吗？</p>
+      <p>通常会保持相对稳定的基础框架，偶尔根据常见疑问做补充。可以把它当作一本活页的手边手册。</p>
+    </div>
+  </div>
+
+  <!-- 嵌入一个场景化的小卡片：延伸阅读 -->
+  <div class="card">
+    <div class="card-header">
+      <h3>从一页出发 · 延伸</h3>
+      <span class="accent">自己搭建知识线</span>
+    </div>
+    <p>很多人习惯先打开 <a href="https://play-texasholdem.com">德州扑克游戏</a> 确认规则表述，再结合自己的牌谱记录做比对。这比你想象中更接近一种“对照阅读”——每一页都是线索，可以串起属于自己的策略笔记。</p>
+    <p style="margin-top: 0.6rem;">比如从位置表格延伸到翻后下注尺度，或是从赔率计算连到底池范围分析。站点本身保持克制，但作为起点足够清晰。</p>
+    <hr class="light">
+    <p style="font-size: 0.9rem; color: #4a6172;"><span class="tag">提醒</span> 任何策略建议都需结合具体对局，没有万能公式。多看、多记、多调整。</p>
+  </div>
+
+  <!-- FAQ 摘要 / 温和结尾合并 -->
+  <div class="card" style="padding-bottom: 1.6rem;">
+    <div class="card-header">
+      <h3>一些常见疑问</h3>
+      <span class="accent">简短摘要</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+      <div><span class="q">适合新手吗？</span> 基础规则和术语说明比较齐全，可作为入门后的第一本“手边册”。</div>
+      <div><span class="q">内容偏向现金局还是锦标赛？</span> 两者都有涉及，以常见结构为主。具体细节可在页面内对照查看。</div>
+      <div><span class="q">可以当作唯一参考吗？</span> 建议配合实际对局和优质论坛一起使用，多方印证更可靠。</div>
+    </div>
+    <!-- 温和结尾 -->
+    <div class="closing-note">
+      <p>整理这件事，有时候比打一手牌更安静。打开一个页面，记几行笔记，下次翻开时，你会感谢自己留过这些痕迹。</p>
+      <p style="margin-top: 0.3rem;">—— 始终回到那个熟悉的入口：<a href="https://play-texasholdem.com">德州扑克游戏</a>。</p>
+    </div>
+  </div>
+
+  <!-- 极简脚注（非必要，但增加完成感） -->
+  <div style="text-align: center; font-size: 0.8rem; color: #7b8a99; padding: 0.8rem 0 0.2rem; border-top: 1px solid #e0e5ec; margin-top: 0.3rem;">
+    对照 · 延伸 · 日常记录
+  </div>
+
+</div>
+</body>
+</html>
